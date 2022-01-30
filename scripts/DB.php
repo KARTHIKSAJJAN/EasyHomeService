@@ -24,8 +24,11 @@ class DB
     public static function getConnection()
     {
         try {
-            $conn = new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME, self::USERNAME, self::PASSWORD, []);
+            $conn = new PDO("sqlsrv:server = tcp:karthiksajjan.database.windows.net,1433; Database = easyhomeservices", "karthiksajjan-admin", "Karthik@1to3");
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            }
+            
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
