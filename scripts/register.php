@@ -25,9 +25,7 @@ if (isset($_POST['register'])) {
         exit();
     }
 
-    $isProviderCreated = DB::query("INSERT INTO providers values(name, contact, descr,adder1, adder2, city, password, photo, profession)", [
-            $name,$contact,$descr,$adder1,$adder2,$city,$password,$file1, $profession
-        ]);
+    $isProviderCreated = DB::query("INSERT INTO providers (name, contact, descr,adder1, adder2, city, password, photo, profession) values ('$name','$contact','$descr','$adder1','$adder2','$city','$password','$file1', '$profession') ");
 
     if ($isProviderCreated) {
         header('Location: ../register.php?msg=success');
