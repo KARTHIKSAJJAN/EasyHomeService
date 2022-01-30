@@ -9,7 +9,7 @@ if (isset($_POST['city']) && isset($_POST['profession'])) {
     $city = $input['city'];
     $profession = $input['profession'];
 
-    $sql = "SELECT * FROM `providers` WHERE city=? AND profession=?";
+    $sql = "SELECT * FROM providers WHERE city=? AND profession=?";
     $stmt = DB::query($sql, [
         $city, $profession
     ]);
