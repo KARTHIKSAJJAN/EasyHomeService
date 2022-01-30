@@ -16,7 +16,7 @@ if (isset($_POST['book'])) {
     $payment = $_POST['payment'];
     
     $sql = DB::query("INSERT INTO bookings (provider_id, fname, lname, contact, adder, date, payment, queries) values ('$provider','$fname','$lname','$contact','$adder','$date','$payment','$queries') ");
-    if ($isBooked) {
+    if ($sql) {
         header("Location: ../booking.php?provider=$provider&msg=success");
         exit();
     } else {
