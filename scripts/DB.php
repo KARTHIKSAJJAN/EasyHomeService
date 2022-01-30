@@ -2,7 +2,7 @@
 
 class DB
 {
-    public const HOST = "sqlsrv:server = tcp:karthiksajjan.database.windows.net,1433";
+    public const HOST = "tcp:karthiksajjan.database.windows.net,1433";
     public const DBNAME = "easyhomeservices";
     public const USERNAME = "karthiksajjan-admin";
     public const PASSWORD = "Karthik@1to3";
@@ -23,7 +23,7 @@ class DB
     public static function getConnection()
     {
         try {
-            $conn = new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME, self::USERNAME, self::PASSWORD, []);
+            $conn = new PDO("sqlsrv:server=".self::HOST.";Database=".self::DBNAME, self::USERNAME, self::PASSWORD, []);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             echo $e->getMessage();
