@@ -14,12 +14,8 @@ if (isset($_POST['book'])) {
     $date = $_POST['date'];
     $queries = $_POST['queries'];
     $payment = $_POST['payment'];
-
-    $sql = "INSERT INTO bookings values(DEFAULT, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $isBooked = DB::query($sql, [
-        $provider, $fname, $lname, $contact, $adder, $date, $payment, $queries
-    ]);
-
+    
+    $sql = DB::query("INSERT INTO bookings (provider_id, fname, lname, contact, adder, date, payment, queries) values ('$provider','$fname','$lname','$contact','$adder','$date','$payment','$queries') ");
     if ($isBooked) {
         header("Location: ../booking.php?provider=$provider&msg=success");
         exit();
