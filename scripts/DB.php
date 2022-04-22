@@ -5,7 +5,7 @@ class DB
     public const HOST = "tcp:karthiksajjan.database.windows.net,1433";
     public const DBNAME = "easyhomeservices";
     public const USERNAME = "karthiksajjan-admin";
-    public const PASSWORD = "Karthik@1to3";
+    public const PASSWORD = "";
     /**
      * PDOStatement object used by Database class
      *
